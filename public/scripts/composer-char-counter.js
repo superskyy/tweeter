@@ -4,8 +4,8 @@ $(document).ready(function() {
     Characters = $("textarea").val().length;
    	if (Characters > 140) {
       $(".counter").text(140 - Characters).css({color: "red"});
-	} else {
+		} else {
 	  $(".counter").text(140 - Characters).css({color: "black"});
-	}
+		}
   });
 });
