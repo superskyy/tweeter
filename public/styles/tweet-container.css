@@ -1,0 +1,48 @@
+section.tweet-container {
+	margin: 2em 2em;
+	border: solid 1.5px #00a087;
+	border-radius: 10px;
+	/*height: 200px;*/
+	overflow: hidden;
+}
+
+header{
+
+	height: 55px;
+	background-color: #E8E8E8;
+	border-radius: 8px 8px 0 0
+}
+.avatar {
+	margin: 5px;
+	margin-left: 10px; 
+	border: 1px solid grey; 
+	border-radius: 5px;
+	float: left;
+	height: 40px;
+	width: 40px;
+}
+
+.name {
+	/*padding-left: 10px;*/
+	margin: 5px;
+	float: left;
+	font-weight: bold;
+	font-size: 1.5em;
+
+}
+
+p.tweeter-text {
+	float: bottom;
+	margin: 20px
+}
+
+footer.time {
+	padding: 10px;
+	border-top: 1px solid #00a087;
+
+}
+
+div.at-sign {
+	padding: 10px;
+	float: right;
+}
