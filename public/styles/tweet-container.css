@@ -1,15 +1,22 @@
-section.tweet-container {
+article.block {
 	margin: 2em 2em;
 	border: solid 1.5px #00a087;
 	border-radius: 10px;
-	/*height: 200px;*/
 	overflow: hidden;
 }
 
-header{
+.block:hover {
+	opacity: 1.0;
+}
 
+.block {
+	opacity: 0.6;
+}
+
+
+header {
 	height: 55px;
-	background-color: #E8E8E8;
+	background-color: #F0F0F0;
 	border-radius: 8px 8px 0 0
 }
 .avatar {
@@ -28,7 +35,6 @@ header{
 	float: left;
 	font-weight: bold;
 	font-size: 1.5em;
-
 }
 
 p.tweeter-text {
