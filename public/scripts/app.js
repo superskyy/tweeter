@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$( document ).ready(function() {
 const Data = [
   {
     "user": {
@@ -107,5 +108,6 @@ function createTweetElement(tweetData) {
 		.append($info)
 		.append($date)
 }
-
 renderTweets(Data);
+
+});
