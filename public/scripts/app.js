@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
 const Data = [
   {
     "user": {
@@ -52,10 +51,6 @@ const Data = [
   }
 ];
 
-// let $tweet = createTweetElement(tweetData);
-
-// $('.tweet-container').append($tweet); 
-
 function formatTime (time) {
 	var diff = Math.floor((Date.now() - time) / 1000);
   var interval = Math.floor(diff / 31536000);
@@ -87,9 +82,6 @@ function formatTime (time) {
 }
 
 function renderTweets(newTweets) {
-	// loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
   let value = [];
   for (let i = 0; i < newTweets.length; i++) {
   	value.push(createTweetElement(newTweets[i]));  
@@ -98,11 +90,8 @@ function renderTweets(newTweets) {
 }
 
 function createTweetElement(tweetData) {
-	const $tweet = $("<article>")
-			.addClass("block")
+	const $tweet = $("<article>").addClass("block")
 	const $header = $("<header>")
-	// const $parag = $("<p>")
-	// const $bottom = $("<footer>")
 
 	const $image = $("<img>").attr('src', tweetData.user.avatars.small).addClass("avatar");
 	const $username = $("<div>").text(tweetData.user.name).addClass("name");
@@ -112,9 +101,6 @@ function createTweetElement(tweetData) {
 
 	// storing info into the header
 	$header.append($image).append($username).append($handle)
-	// $parag.append($info)
-	// $bottom.append($date)
-
 
 	return $tweet
 		.append($header)
