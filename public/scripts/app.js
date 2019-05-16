@@ -6,6 +6,12 @@
 
 $( document ).ready(function() {
 
+$("button").click(function(){
+  $(".new-tweet").slideToggle(function() {
+    $("textarea").focus()
+  });
+});
+
 function formatTime (time) {
 	var diff = Math.floor((Date.now() - time) / 1000);
   var interval = Math.floor(diff / 31536000);
