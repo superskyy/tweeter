@@ -83,11 +83,10 @@ function formatTime (time) {
 }
 
 function renderTweets(newTweets) {
-  let value = [];
+  // let value = [];
   for (let i = 0; i < newTweets.length; i++) {
-  	value.push(createTweetElement(newTweets[i]));  
+  	$('.tweet-container').prepend(createTweetElement(newTweets[i]));  
   }
-	return $('.tweet-container').append(value); 
 }
 
 function createTweetElement(tweetData) {
@@ -127,10 +126,11 @@ function createTweetElement(tweetData) {
 			method: "GET"
 		})
 		.then(function (tweets) {
-			$(".tweet-container").empty();
+			$("textarea").val("");
 			renderTweets(tweets);
 		})
 	}
-	renderTweets(loadTweets());
+
+renderTweets(loadTweets());
 
 });
