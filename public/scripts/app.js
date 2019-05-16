@@ -5,52 +5,52 @@
  */
 
 $( document ).ready(function() {
-const Data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
+// const Data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": {
+//         "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+//         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
+//         "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+//       },
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": {
+//         "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+//         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
+//         "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+//       },
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   },
+//   {
+//     "user": {
+//       "name": "Johann von Goethe",
+//       "avatars": {
+//         "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+//         "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
+//         "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+//       },
+//       "handle": "@johann49"
+//     },
+//     "content": {
+//       "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+//     },
+//     "created_at": 1461113796368
+//   }
+// ];
 
 function formatTime (time) {
 	var diff = Math.floor((Date.now() - time) / 1000);
@@ -83,8 +83,7 @@ function formatTime (time) {
 }
 
 function renderTweets(newTweets) {
-  // let value = [];
-  for (let i = 0; i < newTweets.length; i++) {
+  for (let i in newTweets) {
   	$('.tweet-container').prepend(createTweetElement(newTweets[i]));  
   }
 }
@@ -107,17 +106,23 @@ function createTweetElement(tweetData) {
 		.append($info)
 		.append($date)
 	}
-	// renderTweets(loadTweets());
 
-	$(".searchForm").submit((event) =>{     
-	event.preventDefault();
-	let $form = $(this),
-	tweet = $form.find("textarea[name='text']").val(),
-	url = $form.attr("action");
+	$(".searchForm").submit((event) => {     
+  event.preventDefault();
+
+  if (!$("textarea").val()) {
+    alert("The text field is empty!")
+  } else if ($("textarea").val().length > 140) {
+    alert("Exceeds the 140 character limit!")
+  } else {
+    let $form = $(this),
+    tweet = $form.find("textarea[name='text']").val(),
+    url = $form.attr("action");
+
 		$.post("/tweets",{text: tweet}).done(data => {
-			// $("textarea").value("").trigger("keyup");
 			loadTweets();
 		});
+    }
 	});
 
 	function loadTweets() {
@@ -130,7 +135,6 @@ function createTweetElement(tweetData) {
 			renderTweets(tweets);
 		})
 	}
-
-renderTweets(loadTweets());
+  renderTweets(loadTweets());
 
 });
