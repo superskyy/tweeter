@@ -107,7 +107,21 @@ function createTweetElement(tweetData) {
 		.append($header)
 		.append($info)
 		.append($date)
-}
-renderTweets(Data);
+	}
+	renderTweets(Data);
+
+	$(".searchForm").submit(function(event) {     
+	event.preventDefault();
+	let $form = $(this),
+	tweet = $form.find("textarea[name='text']").val(),
+	url = $form.attr("action");
+		$.post(url,{text: tweet}).done(data => {
+			// $("textarea").value("").trigger('keyup');
+		});
+	});
+
+	// function loadTweets() {
+		
+	// }
 
 });
