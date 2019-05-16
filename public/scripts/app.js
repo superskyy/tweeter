@@ -108,7 +108,7 @@ function createTweetElement(tweetData) {
 		.append($info)
 		.append($date)
 	}
-	// renderTweets(Data);
+	// renderTweets(loadTweets());
 
 	$(".searchForm").submit((event) =>{     
 	event.preventDefault();
@@ -131,5 +131,6 @@ function createTweetElement(tweetData) {
 			renderTweets(tweets);
 		})
 	}
+	renderTweets(loadTweets());
 
 });
