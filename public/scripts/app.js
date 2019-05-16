@@ -74,11 +74,9 @@ function createTweetElement(tweetData) {
   event.preventDefault();
 
   if (!$("textarea").val()) {
-    // alert("The text field is empty!")
-    $(".empty-hide-show").slideDown().fadeOut(4000)
+    $(".empty-hide-show").slideDown().fadeOut(2000)
   } else if ($("textarea").val().length > 140) {
-    // alert("Exceeds the 140 character limit!")
-    $(".limit-hide-show").slideDown().fadeOut(4000)
+    $(".limit-hide-show").slideDown().fadeOut(2000)
   } else {
     let $form = $(this),
     tweet = $form.find("textarea[name='text']").val(),
