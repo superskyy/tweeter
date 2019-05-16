@@ -33,3 +33,18 @@ nav {
 	float: left;
 }
 
+.compose-button {
+	margin: 20px;
+	float: right;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	color: #00a087;
+	opacity: 1;
+}
+
+.compose-button:hover:focus {
+	opacity: .5;
+	color: #111;
+}
+
