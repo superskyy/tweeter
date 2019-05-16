@@ -29,3 +29,22 @@ span.counter {
 	float: right;
 	margin-right: 7px;
 }
+
+
+.empty-hide-show {
+	padding: 2px;
+	margin-top: 5px;
+	color: red;
+	display: none;
+}
+
+.limit-hide-show {
+	padding: 2px;
+	margin-top: 5px;
+	color: red;
+	display: none;
+}
+
+
+
+
