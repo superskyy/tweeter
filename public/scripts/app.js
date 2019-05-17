@@ -95,6 +95,6 @@ function createTweetElement(tweetData) {
 			renderTweets(tweets);
 		})
 	}
-  renderTweets(loadTweets());
+  loadTweets();
 
 });
