@@ -1,4 +1,5 @@
 article.block {
+	overflow-wrap: break-word;
 	margin: 2em 2em;
 	border: solid 1.5px #00a087;
 	border-radius: 10px;
