@@ -56,15 +56,19 @@ $( document ).ready(function() {
   	const $username = $("<div>").text(tweetData.user.name).addClass("name");
   	const $handle = $("<div>").text(tweetData.user.handle).addClass("at-sign");
   	const $info = $("<p>").text(tweetData.content.text).addClass("tweeter-text")
-  	const $date = $("<footer>").text(formatTime(tweetData.created_at)).addClass("time")
+  	const $footer = $("<footer>").text(formatTime(tweetData.created_at)).addClass("time")
 
+    const $icon_1 = $('<img>').attr('src',"https://img.icons8.com/ios/20/000000/retweet-filled.png").addClass('image1')
+    const $icon_2 = $('<img>').attr('src',"https://img.icons8.com/ios/20/000000/facebook-like-filled.png").addClass('image2')
+    const $icon_3 = $('<img>').attr('src',"https://img.icons8.com/material/20/000000/hearts.png").addClass('image3')
   	// storing info into the header
   	$header.append($image).append($username).append($handle)
+    $footer.append($icon_1).append($icon_2).append($icon_3)
 
   	return $tweet
   		.append($header)
   		.append($info)
-  		.append($date)
+  		.append($footer)
   }
 
   //Form validation
