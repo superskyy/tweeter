@@ -61,7 +61,8 @@ $( document ).ready(function() {
     const $icon_1 = $('<img>').attr('src',"https://img.icons8.com/ios/20/000000/retweet-filled.png").addClass('image1')
     const $icon_2 = $('<img>').attr('src',"https://img.icons8.com/ios/20/000000/facebook-like-filled.png").addClass('image2')
     const $icon_3 = $('<img>').attr('src',"https://img.icons8.com/material/20/000000/hearts.png").addClass('image3')
-  	// storing info into the header
+  	
+    // storing info into the header and footer
   	$header.append($image).append($username).append($handle)
     $footer.append($icon_1).append($icon_2).append($icon_3)
 

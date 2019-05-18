@@ -53,3 +53,29 @@ div.at-sign {
 	padding: 10px;
 	float: right;
 }
+
+.image1, .image2, .image3 {
+    visibility: hidden;
+    float: right;
+    margin-right: 10px;
+}
+/*.image2 {
+    visibility: hidden;
+    float: right;
+    margin-right: 20px;
+}
+.image3 {
+    visibility: hidden;
+    float: right;
+    margin-right: 20px;
+}*/
+
+.block:hover .image1 {
+    visibility: visible;
+}
+.block:hover .image2 {
+    visibility: visible;
+}
+.block:hover .image3 {
+    visibility: visible;
+}
