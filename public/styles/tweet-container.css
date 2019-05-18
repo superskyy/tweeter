@@ -59,16 +59,6 @@ div.at-sign {
     float: right;
     margin-right: 10px;
 }
-/*.image2 {
-    visibility: hidden;
-    float: right;
-    margin-right: 20px;
-}
-.image3 {
-    visibility: hidden;
-    float: right;
-    margin-right: 20px;
-}*/
 
 .block:hover .image1 {
     visibility: visible;
