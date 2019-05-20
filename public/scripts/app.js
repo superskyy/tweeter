@@ -89,7 +89,7 @@ $( document ).ready(function() {
       url = $form.attr("action");
 
     		$.post("/tweets",{text: tweet}).done(data => {
-    			loadTweets();
+    			renderTweets();
     		});
     }
   });
