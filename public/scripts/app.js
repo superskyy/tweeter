@@ -5,6 +5,8 @@
  */
 
 $( document ).ready(function() {
+
+  //Compose button 
   $("button").click(function(){
     $(".new-tweet").slideToggle(function() {
       $("textarea").focus()
@@ -42,12 +44,14 @@ $( document ).ready(function() {
     return "<1m" + " ago";
   }
 
+  //Tweet Rendering
   function renderTweets(newTweets) {
     for (let i in newTweets) {
     	$('.tweet-container').prepend(createTweetElement(newTweets[i]));  
     }
   }
 
+  // Tweet Container
   function createTweetElement(tweetData) {
   	const $tweet = $("<article>").addClass("block")
   	const $header = $("<header>")
@@ -90,6 +94,7 @@ $( document ).ready(function() {
     }
   });
 
+  // Load Tweets function
   function loadTweets() {
   	$.ajax({
   		url: "/tweets",
