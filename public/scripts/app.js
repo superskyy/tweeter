@@ -89,7 +89,8 @@ $( document ).ready(function() {
       url = $form.attr("action");
 
     		$.post("/tweets",{text: tweet}).done(data => {
-    			renderTweets();
+          $("textarea").val("");
+    			renderTweets([data])
     		});
     }
   });
@@ -101,7 +102,6 @@ $( document ).ready(function() {
   		method: "GET"
   	})
   	.then(function (tweets) {
-  		$("textarea").val("");
   		renderTweets(tweets);
   	})
   }
